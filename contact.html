@@ -236,7 +236,7 @@
                 <form method="post">
                     <input type="text" id="fname" name="Name" placeholder="Name" required>
                     <input type="email" id="lname" name="Email"  placeholder="Email"  required>
-                    <input type="message" id="display" name="lname" placeholder="Message" required></input>
+                    <input type="message" id="display" name="Message" placeholder="Message" required></input>
                     <input type="submit" value="Submit" id="submit" name="submit">
                 </form>
             </section>
@@ -267,5 +267,14 @@
     </footer>
 </body>
 <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwKGGeiqbi5XWFWWz92Q5JrtFN7m8PE1y_tmFxHCpOSPHLdQvfgAMHF5oOBezFs_DXj/exec'
+        const form = document.forms['google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+        })
 </script>
 </html>
