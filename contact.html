@@ -233,11 +233,11 @@
                 <h1>Contact us</h1>
             </section>
             <section id="sec2">
-                <form method="post" name="google-sheet">
+                <form method="post" name="google-sheet" id="myForm">
                     <input type="text" id="fname" name="Name" placeholder="Name" required>
                     <input type="email" id="lname" name="Email"  placeholder="Email"  required>
                     <input type="message" id="display" name="Message" placeholder="Message" required></input>
-                    <input type="submit" value="Submit" id="submit" name="submit" onclick="reset()">
+                    <input type="submit" value="Submit" id="submit" name="submit" onclick="myFunction()">
                 </form>
             </section>
         </div>
@@ -276,5 +276,8 @@
                 .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
                 .catch(error => console.error('Error!', error.message))
         })
+    function myFunction() {
+  document.getElementById("myForm").reset();
+}
 </script>
 </html>
